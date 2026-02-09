@@ -55,5 +55,5 @@ export interface Toast {
 export interface ModalInfo {
     title: string;
     message: string;
-    onConfirm: () => void;
+    onConfirm: () => void | boolean;
 }

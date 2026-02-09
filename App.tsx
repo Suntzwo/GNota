@@ -23,7 +23,7 @@ const App: React.FC = () => {
         setToast({ id: Date.now(), message, type });
     };
 
-    const showModal = (title: string, message: string, onConfirm: () => void) => {
+    const showModal = (title: string, message: string, onConfirm: () => void | boolean) => {
         setModal({ title, message, onConfirm });
     };
 
@@ -112,7 +112,7 @@ const App: React.FC = () => {
     return (
         <div className="flex min-h-screen bg-slate-50 text-slate-800">
             <Sidebar activeView={activeView} setActiveView={setActiveView} />
-            <main className="flex-1 ml-20 p-4 md:p-8">
+            <main className="flex-1 ml-24 p-4 md:p-8">
                  <div className="bg-white p-6 rounded-xl shadow-sm w-full max-w-4xl border border-slate-200 mx-auto">
                     {toast && <ToastNotification toast={toast} onClose={() => setToast(null)} />}
                     {renderView()}
